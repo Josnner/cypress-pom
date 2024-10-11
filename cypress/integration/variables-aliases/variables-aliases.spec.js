@@ -29,5 +29,25 @@ describe('Variables & Aliases', () => {
             })
         })
     })
+    it('Alias, obtener el valor de variables en otros bloques', function(){
+        cy.get('#showSmallModal').invoke('text').as('InvokeText')
+    })
+    it('Share Context', function(){
+        cy.log("Invoke" + this.InvokeText)
+        cy.log("Wrap" + this.WrapText)
+    })
+    it('Almacenar texto para usar en otro bloque', function(){
+        cy.get('#showSmallModal').then($modalBtn => {
+            const smallModalText = $modalBtn.text()
+            /////////////////////////////
+            cy.wrap(smallModalText).as('WrapText')
+            /////////////////////////////
+            $modalBtn.click()
+            cy.get('#example-modal-sizes-title-sm').contains(smallModalText, { matchCase: false })
+            cy.get('#closeSmallModal').click()
+            cy.url().should('eq', 'https://demoqa.com/modal-dialogs')
+            
+        })
+    })
 
 })
