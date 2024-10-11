@@ -4,7 +4,7 @@ import inventoryDemoPage from '../../pages/saucedemo/inventoryDemoPage'
 const test = require('../../fixtures/data-driven/sauceUsers.json')
 
 describe('Home Sauce Demo', () => {
-    beforeEach(function () {
+    beforeEach(()=> {
         cy.visit('https://www.saucedemo.com/')
 
     })
