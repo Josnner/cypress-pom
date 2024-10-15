@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:Chrome": "cypress run --browser chrome --spec cypress/integration/pom/*.spec.js",
-    "cypress:Edge": "cypress run --browser edge --spec cypress/integration/pom/*.spec.js --reporter mochawesome --reporter-options reportDir=cypress/report",
+    "cypress:Firefox": "cypress run --browser firefox --spec cypress/integration/pom/*.spec.js --reporter mochawesome --reporter-options reportDir=cypress/report",
     "cypress:browserstack": "browserstack-cypress run --sync --spec cypress/integration/pom/*.spec.js --reporter mochawesome --reporter-options reportDir=cypress/report"
   },
   "keywords": [],
