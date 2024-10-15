@@ -20,4 +20,5 @@ module.exports = defineConfig({
   },
   chromeWebSecurity: false,           // Desactiva chromeWebSecurity para evitar problemas con CORS
   experimentalStudio: true,           // Activa el modo experimentalStudio
+  firefoxWebSecurity: false,           
 });
