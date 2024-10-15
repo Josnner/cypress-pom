@@ -39,7 +39,8 @@ pipeline{
                 reportFiles: 'index.html', 
                 reportName: 'HTML Report', 
                 reportTitles: 'Un ejemplo', 
-                useWrapperFileDirectly: true])                        
+                useWrapperFileDirectly: true
+                ])                        
         }
     }
 }
