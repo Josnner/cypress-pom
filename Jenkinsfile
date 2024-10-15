@@ -4,7 +4,7 @@ pipeline{
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/integration/**/**", description:"Ej: cypress/integration/pom/*.spec.js")
-        choice(name:"BROWSER", choices: ['chrome', 'firefox'], description "escoja un browser para ejecutar su script")
+        choice(name:"BROWSER", choices: ['chrome', 'firefox'], description: "escoja un browser para ejecutar su script")
     }
 
     options{
@@ -13,7 +13,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Buiding application"
+                echo "Building application"
             }
         }
         stage('Testing'){
@@ -31,7 +31,15 @@ pipeline{
     }
     post{
         always{
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress\\reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'Un ejemplo', useWrapperFileDirectly: true])                        
+            publishHTML([
+                allowMissing: false, 
+                alwaysLinkToLastBuild: false, 
+                keepAll: true, 
+                reportDir: 'cypress\\reports', 
+                reportFiles: 'index.html', 
+                reportName: 'HTML Report', 
+                reportTitles: 'Un ejemplo', 
+                useWrapperFileDirectly: true])                        
         }
     }
 }
